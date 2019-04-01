@@ -11,13 +11,13 @@ public class Person {
   public Person() {
 
   }
-	
+
   /**
    *
    * @param someone someone
    * @return hello
    */
-  final public String person(final String someone) {
+  public final String person(final String someone) {
     return String.format("Hello, %s!", someone);
   }
 }
