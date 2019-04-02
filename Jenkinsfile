@@ -1,13 +1,16 @@
 pipeline {
     agent any
+    tools {
+        maven 'local maven'
+    }
     stages{
         stage('Build'){
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
             post {
                 success {
-                    echo '開始存檔'...'
+                    echo '開始存檔...'
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
